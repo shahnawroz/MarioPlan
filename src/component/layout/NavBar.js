@@ -1,9 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import SignedInLink from './SignedInLink'
 import SignedOutLink from './SignedOutLink'
 
-const NavBar=()=>{
+const NavBar=(props)=>{
+    const { auth } = props;
     return(
         <nav className="nav-wrapper grey draken-3">
             <div className="container">
@@ -14,4 +16,15 @@ const NavBar=()=>{
         </nav>
     )
 }
-export default NavBar
+
+const mapStateToProps=(state)=>
+{
+    // console.log(state);
+    return{
+        auth: state.firebase.auth
+
+    }
+}
+
+
+export default connect(mapStateToProps) (NavBar)

@@ -12,7 +12,7 @@ var firebaseConfig = {
     measurementId: "G-QM0L5V4Y14"
   };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 firebase.firestore().settings({timestampsInSnapshots:true});
 
 export default firebase;
